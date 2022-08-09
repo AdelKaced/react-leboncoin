@@ -8,7 +8,7 @@ import MessageIcon from "@mui/icons-material/Message";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 
 const Navigation = () => {
-    const [active, setActive] = useState()
+    
   return (
     <div className="nav">
       <div className="navLogo">
@@ -19,7 +19,7 @@ const Navigation = () => {
         </div>
         <div>
           <SearchIcon />
-          <span className='action'>Rechercher</span>
+          <span className='action search'>Rechercher</span>
         </div>
       </div>
       <ul>

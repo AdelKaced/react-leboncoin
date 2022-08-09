@@ -1,5 +1,5 @@
 .nav {
-  box-shadow:0px -1px 7px grey;
+  box-shadow: 0px -1px 7px grey;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -36,6 +36,7 @@
     white-space: nowrap;
     cursor: pointer;
     user-select: none;
+    position: relative;
   }
   .navLogo div:first-of-type {
     background-color: $color-1;
@@ -43,13 +44,26 @@
     color: $white;
     transition: 0.3s;
   }
-  .navLogo div:first-of-type:hover{
+  .navLogo div:first-of-type:hover {
     filter: brightness(75%);
   }
 
-  .navLogo div:nth-of-type(2) {
-    
+  .navLogo div:nth-of-type(2):hover:after,
+  .menu-list:hover:after {
+    content: "";
+    background: $color-1;
+    height: 5px;
+    position: absolute;
+    width: 100%;
   }
+  .navLogo div:nth-of-type(2):hover:after {
+    bottom:-15px
+  }
+  .menu-list:hover:after{
+    bottom:-15px
 
-
+  }
+  ul li {
+    position: relative;
+  }
 }
