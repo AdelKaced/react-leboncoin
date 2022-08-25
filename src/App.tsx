@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FindAd from "./pages/FindAd";
 import Home from "./pages/Home";
-import PlaceAd from "./pages/PlaceAd";
+import FindAdd from "./pages/FindAdd";
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/deposer-une-annonce" element={<FindAd/>} />
-          <Route path="/annonces/offres" element={<PlaceAd />} />
+          <Route path="/annonces/offres" element={<FindAdd />} />
         </Routes>
       </BrowserRouter>
     </div>

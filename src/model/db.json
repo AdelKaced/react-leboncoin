@@ -1,0 +1,67 @@
+{
+  "offers": [
+    {
+      "id": 1,
+      "category": "Vehicules",
+      "name": "Citroen C3",
+      "city": "Cergy",
+      "price": 6500,
+      "description": "Vends C3 en très bonne état annné 2013. CT ok réalisé il y a moins de 3 mois",
+      "picture": "../Images/C3.jpg"
+    },
+    {
+      "id": 2,
+      "category": "Vehicules",
+      "name": "Peugeot 205",
+      "city": "Cergy",
+      "price": 1099,
+      "description": "Vends 205 en très bonne état annné 2018. CT ok réalisé il y a moins de 3 mois",
+      "picture": "../Images/205.jpg"
+    },
+    {
+      "id": 3,
+      "category": "Vehicules",
+      "name": "Renault Megane",
+      "city": "Paris",
+      "price": 7800,
+      "description": "Vends Megane en très bonne état annné 2012. CT ok réalisé il y a moins de 3 mois",
+      "picture": "../Images/megane.jpg"
+    },
+    {
+      "id": 4,
+      "category": "Immobilier",
+      "name": "Appartement T2 Cente Ville",
+      "city": "Cergy",
+      "price": 174500,
+      "description": "Vends apppartement entièrement rénové, aucun travaux à prévoir",
+      "picture": "../Images/T2_Cergy.webp"
+    },
+    {
+      "id": 5,
+      "category": "Immobilier",
+      "name": "Studio proche Gare",
+      "city": "Cergy",
+      "price": 129000,
+      "description": "Vends apppartement proche gare, bon investissement",
+      "picture": "../Images/Meublé Studio.jpg"
+    },
+    {
+      "id": 6,
+      "category": "Immobilier",
+      "name": "Studio 13m2",
+      "city": "Paris",
+      "price": 250000,
+      "description": "Vends studio Chatelet, résidence secondaire ou location saisonniere",
+      "picture": "../Images/Paris.avif"
+    },
+    {
+      "id": 7,
+      "category": "Vacances",
+      "name": "Location Villa semaine",
+      "city": "Antibes",
+      "price": 1000,
+      "description": "Vends apppartement à 15 min de la mer, résidence secondaire ou location saisonniere",
+      "picture": "../Images/Antibes.webp"
+    }
+  ]
+}

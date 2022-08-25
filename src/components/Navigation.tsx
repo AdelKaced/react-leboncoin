@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactComponent as Logo } from "../logo-le-bon-coin.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";

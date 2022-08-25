@@ -25,6 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:api": "json-server --watch src/model/db.json --port=3001",
     "build": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

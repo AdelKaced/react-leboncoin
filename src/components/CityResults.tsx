@@ -11,14 +11,17 @@ const CityResults = ({
     setDisplayCity(false);
     setInputData((prevData) => ({
       ...prevData,
-      city: data.nom + " " + data.codesPostaux[0],
+      city: data.nom 
+      // + " " + data.codesPostaux[0],
     }));
   };
 
   useEffect(() => {
     console.log(typeof city);
+    console.log( /[0-9]/.test(city));
+    
     let url;
-    if (typeof city === "string") {
+    if (!/[0-9]/.test(city)) {
       url = `https://geo.api.gouv.fr/communes?nom=${city}&fields=nom,code,codesPostaux,codeDepartement,codeRegion,population&format=json&geometry=centre`;
     } else {
       url = `https://geo.api.gouv.fr/communes?codePostal=${city}&fields=nom,code,codesPostaux,codeDepartement,codeRegion,population&format=json&geometry=centre`;

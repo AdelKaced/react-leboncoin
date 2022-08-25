@@ -6,23 +6,13 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import TimeToLeaveIcon from "@mui/icons-material/TimeToLeave";
 import HomeIcon from "@mui/icons-material/Home";
-import {
-  FormControl,
-  Input,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 // https://geo.api.gouv.fr/communes?nom=behren&fields=nom,code,codesPostaux,codeDepartement,codeRegion,population&format=json&geometry=centre
-
 // https://geo.api.gouv.fr/communes?codePostal=95000&fields=nom,code,codesPostaux,codeDepartement,codeRegion,population&format=json&geometry=centre
-
 // https://geo.api.gouv.fr/communes?codeDepartement=57&fields=nom,code,codesPostaux,codeDepartement,codeRegion,population&format=json&geometry=centre
-
 // https://geo.api.gouv.fr/regions?nom=ile%20de%20france&fields=nom,code
-
 // https://geo.api.gouv.fr/departements?nom=moselle&fields=nom,code,codeRegion
 
 type Field = {
@@ -30,46 +20,40 @@ type Field = {
   category: string;
   search: string;
   city: string | number | null;
-  price: {
-    minimum: number | null;
-    maximum: number | null;
-  };
+  priceMin: number | null;
+  priceMax: number | null;
 };
 
 const Forms = () => {
+  const navigate = useNavigate();
   // const [radioChecked, setRadioChecked] = useState<string>();
+
   const [inputData, setInputData] = useState<Field>({
     radioChecked: "offer",
     category: "",
     search: "",
     city: null,
-    price: {
-      minimum: null,
-      maximum: null,
-    },
+    priceMin: null,
+    priceMax: null,
   });
+
   const [displayPrice, setDisplayPrice] = useState(false);
   const [displayCity, setDisplayCity] = useState(false);
-
-  // const handleRadio = (e: React.MouseEvent<HTMLElement>) => {
-  //   const target = e.target as HTMLInputElement;
-  //   console.log(target.id);
-  //   setInputData({ ...inputData, [target.name]: target.value });
-  // };
 
   const handleChange = (e: any) => {
     console.log(e.target);
     const name = e.target.name;
     const value = e.target.value;
     if (name === "city") setDisplayCity(true);
-    if (name === "minimum" || name === "maximum") {
-      setInputData({
-        ...inputData,
-        price: { ...inputData.price, [name]: value },
-      });
-    } else {
-      setInputData({ ...inputData, [name]: value });
-    }
+    setInputData({ ...inputData, [name]: value });
+    // if (name === "minimum" || name === "maximum") {
+    //   setInputData({
+    //     ...inputData,
+    //     price: { ...inputData.price, [name]: value },
+    //   });
+    // } else {
+
+    // }
   };
 
   const categories = [
@@ -99,13 +83,22 @@ const Forms = () => {
       icon: <HomeIcon />,
     },
   ];
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    navigate({
+      pathname: "/annonces/offres",
+      search: `?${createSearchParams(inputData)}`,
+    });
+  };
+
   return (
     <div className="form">
       <h1>
         Des millions de petites annonces et autant d'occasions de se faire
         plaisir
       </h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="radio">
           <input
             type="radio"
@@ -175,7 +168,7 @@ const Forms = () => {
             {displayCity && (
               <CityResults
                 city={inputData.city}
-                setDisplayCity={setDisplayCity} 
+                setDisplayCity={setDisplayCity}
                 inputData={inputData}
                 setInputData={setInputData}
               />

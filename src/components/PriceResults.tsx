@@ -9,8 +9,8 @@ const PriceResults = ({ handleChange, inputData }) => {
           <label>Minimum</label>
           <input
             type="number"
-            value={inputData.price.minimum}
-            name="minimum"
+            value={inputData.priceMin}
+            name="priceMin"
             onChange={handleChange}
           />
         </div>
@@ -18,8 +18,8 @@ const PriceResults = ({ handleChange, inputData }) => {
           <label>Maximum</label>
           <input
             type="number"
-            value={inputData.price.maximum}
-            name='maximum'
+            value={inputData.priceMax}
+            name='priceMax'
             onChange={handleChange}
           />
         </div>
